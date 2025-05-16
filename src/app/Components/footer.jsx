@@ -1,11 +1,10 @@
-import React from 'react'
+'use client';
+import React from 'react';
 
-const footer = () => {
+export default function Footer() {
   return (
-    <div className='.w_max .h_12 .border bg-white text-black'>
-      Footer
-    </div>
-  )
+    <footer className="bg-white border-t border-gray-200 text-gray-500 text-sm py-3 px-6">
+      <p>&copy; {new Date().getFullYear()} NotesApp. Built with ❤️</p>
+    </footer>
+  );
 }
-
-export default footer
