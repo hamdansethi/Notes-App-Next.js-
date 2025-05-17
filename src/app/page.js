@@ -38,7 +38,10 @@ export default function NotesApp() {
   };
 
   const handleDeleteNote = (note) => {
-    setNotes(notes.filter(notee => notee.id !== note.id));
+    const answer = prompt("Are you sure you want to delete \"" + note.title + "\"? (y/n)");
+    if (answer && answer[0].toLowerCase() === 'y') {
+      setNotes(notes.filter(notee => notee.id !== note.id));
+    }
   };
 
 
@@ -79,7 +82,7 @@ export default function NotesApp() {
 
       <button
         onClick={handleAddNote}
-        className="px-4 py-2 bg-blue-500 text-white rounded"
+        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-800 focus:ooutline-none focus:ring-2 focus:ring-blue-400 transition"
       >
         Add Note
       </button>
